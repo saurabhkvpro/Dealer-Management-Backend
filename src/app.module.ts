@@ -10,6 +10,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     // Global config module
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env',
   
     }),
 
