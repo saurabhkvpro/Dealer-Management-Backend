@@ -107,17 +107,14 @@ export class AuthService {
     };
   }
 
- private generateToken(user: UserDocument): string {
-  const payload = {
-    sub: user._id,
-    email: user.email,
-    role: user.role,
-  };
-
-  return this.jwtService.sign(payload, {
-    expiresIn: process.env.JWT_EXPIRE || '7d',
-  });
-}
+private generateToken(user: UserDocument): string {
+    const payload = {
+      sub: user._id,
+      email: user.email,
+      role: user.role,
+    };
+    return this.jwtService.sign(payload);
+  }
 
 
   async validateUser(userId: string): Promise<any> {
